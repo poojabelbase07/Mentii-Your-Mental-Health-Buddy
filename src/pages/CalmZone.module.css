@@ -1,0 +1,236 @@
+/* CalmZone.module.css */
+
+.container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  color: #333;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2e3a59;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6a7b95;
+}
+
+.affirmationBox {
+  position: relative;
+  height: 50px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.affirmation {
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab, .activeTab {
+  background-color: #e0e7ff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4b5563;
+  transition: background-color 0.3s ease;
+}
+
+.activeTab {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #4f46e5;
+}
+
+.saveButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.saveIcon {
+  color: #f87171;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.openButton {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.externalIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.bottomSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #2e3a59;
+}
+
+.affirmationDeck {
+  background-color: #fef3c7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.affirmationCard {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  background: #fff8e1;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.deckButtons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.shuffleButton, .saveButtonAlt {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #fbbf24;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4b3c06;
+}
+
+.journalSection {
+  background-color: #e0f2f1;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.selectMood {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.journalEntry {
+  width: 100%;
+  height: 100px;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.moodFeedback {
+  margin-top: 0.8rem;
+  background-color: #d1fae5;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-style: italic;
+  color: #065f46;
+}
+
+.savedCounter {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #2563eb;
+  font-weight: 500;
+}

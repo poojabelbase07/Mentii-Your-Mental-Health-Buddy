@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(25, 25, 25, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}

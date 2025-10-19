@@ -1,0 +1,337 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #64748b;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.activityCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+}
+
+.activityCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--activity-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.activityCard:hover::before {
+  opacity: 1;
+}
+
+.activityCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(107, 34, 34, 0.1);
+  border-color: var(--activity-color);
+}
+
+.activityCard.unavailable {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.activityCard.unavailable:hover {
+  transform: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
+
+.iconContainer {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--activity-color), var(--activity-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.activityCard:hover .iconContainer {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.icon {
+  color: white;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.comingSoon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardArrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: var(--activity-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(-8px);
+}
+
+.activityCard:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.activityCard.unavailable .cardArrow {
+  display: none;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statNumber {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Activity Container Styles */
+.activityContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #8b5cf6;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.backButton:hover {
+  background: #8b5cf6;
+  color: white;
+  transform: translateX(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .activityCard {
+    padding: 20px;
+    min-height: 140px;
+  }
+  
+  .iconContainer {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+  }
+  
+  .stats {
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .statNumber {
+    font-size: 24px;
+  }
+  
+  .activityContainer {
+    padding: 16px;
+  }
+}
+.activityContainer {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.backButton {
+  display: inline-flex; /* Allows icon and text to sit side-by-side */
+  align-items: center;
+  gap: 8px; /* Space between arrow and text */
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.backButton:hover {
+  background-color: #e0e0e0;
+  transform: translateX(-3px); /* Slight movement for feedback */
+}
+@media (max-width: 768px) {
+  .backButton {
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .activitiesGrid {
+    gap: 12px;
+  }
+  
+  .activityCard {
+    padding: 16px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .statItem {
+    flex-direction: row;
+    gap: 12px;
+  }
+}

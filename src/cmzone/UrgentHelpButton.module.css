@@ -1,0 +1,25 @@
+/* components/UrgentHelpButton.module.css */
+.floatingButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f0ad4e; /* Matches header button */
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(240, 173, 78, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.floatingButton:hover {
+  background-color: #ec971f;
+  transform: translateY(-3px);
+}

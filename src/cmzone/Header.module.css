@@ -1,0 +1,57 @@
+/* components/Header.module.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #2c5364;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #7bbcd0;
+}
+
+.urgentHelpButton {
+  background-color: #f0ad4e; /* Soothing but noticeable orange/yellow */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(240, 173, 78, 0.3);
+}
+
+.urgentHelpButton:hover {
+  background-color: #ec971f;
+  transform: translateY(-2px);
+}

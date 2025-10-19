@@ -1,0 +1,112 @@
+.song-list {
+    padding: 30px 40px;
+    background-color: #144545; /* match your theme */
+    color: white;
+    text-align: left;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 12px;
+    padding: 20px 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    /* Remove this if present ↓ */
+    /* justify-content: center; */
+  }
+  .categories span {
+    padding: 6px 14px;
+    border: 1px solid #ffffff40;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .categories span:hover {
+    background-color: #ffffff10;
+    color: #ff5f5f;
+  }
+  
+  .song-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .song-card {
+    background: linear-gradient(135deg, #0e2e2e, #222222);
+    border-radius: 14px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 15px rgba(68, 229, 231, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(68, 229, 231, 0.1);
+  }
+  
+  .song-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* circular image */
+    object-fit: cover;
+    border: 2px solid #118298;
+    margin-right: 20px;
+  }
+  
+  .song-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .song-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 1px;
+  }
+  
+  .song-info p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #aaaaaa;
+  }
+  
+  .song-duration {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #cccccc;
+  }
+  
+  .play-button {
+    background-color: transparent;
+    border: 1px solid #ff5f5f;
+    color: #ff5f5f;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .play-button:hover {
+    background-color: #ff5f5f;
+    color: #0f0f0f;
+  }
+  

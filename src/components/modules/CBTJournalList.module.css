@@ -1,0 +1,537 @@
+:root {
+    /* Color Palette - Calm and Mental Health Friendly */
+    --primary-color: #6b73ff;
+    --primary-light: #8b93ff;
+    --primary-dark: #5a61e6;
+    
+    --background-primary: #f8fafc;
+    --background-secondary: #ffffff;
+    --background-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    
+    --text-primary: #334155;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    
+    --success-color: #10b981;
+    --success-light: #34d399;
+    --warning-color: #f59e0b;
+    --warning-light: #fbbf24;
+    --error-color: #ef4444;
+    --error-light: #f87171;
+    
+    --neutral-color: #8b5cf6;
+    --neutral-light: #a78bfa;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    --transition-fast: all 0.15s ease-in-out;
+    --transition-normal: all 0.3s ease-in-out;
+    --transition-slow: all 0.5s ease-in-out;
+  }
+  
+  /* Base Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background: var(--background-gradient);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header Styles */
+  .header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out 0.4s both;
+  }
+  
+  /* New Entry Button */
+  .newEntryButton {
+    display: block;
+    margin: 0 auto 2rem auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    animation: slideInScale 0.6s ease-out 0.6s both;
+  }
+  
+  @keyframes slideInScale {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .newEntryButton:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  }
+  
+  .newEntryButton:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* No Entries Message */
+  .noEntries {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    background: var(--background-secondary);
+    padding: 3rem 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    margin-top: 2rem;
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulseGlow {
+    from {
+      box-shadow: var(--shadow-sm);
+    }
+    to {
+      box-shadow: var(--shadow-md);
+    }
+  }
+  
+  /* Entry List */
+  .entryList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    animation: staggerFadeIn 0.8s ease-out 0.8s both;
+  }
+  
+  @keyframes staggerFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Journal Cards */
+  .journalCard {
+    background: var(--background-secondary);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(203, 213, 225, 0.3);
+    transition: var(--transition-normal);
+    animation: cardSlideIn 0.6s ease-out both;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .journalCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    opacity: 0;
+    transition: var(--transition-normal);
+  }
+  
+  .journalCard:hover::before {
+    opacity: 1;
+  }
+  
+  @keyframes cardSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .journalCard:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(107, 115, 255, 0.2);
+  }
+  
+  .journalCard:nth-child(2) { animation-delay: 0.1s; }
+  .journalCard:nth-child(3) { animation-delay: 0.2s; }
+  .journalCard:nth-child(4) { animation-delay: 0.3s; }
+  .journalCard:nth-child(5) { animation-delay: 0.4s; }
+  .journalCard:nth-child(6) { animation-delay: 0.5s; }
+  
+  /* Card Header */
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+  }
+  
+  .cardHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  .cardTime {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    background: rgba(107, 115, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+  }
+  
+  /* Card Content */
+  .journalCard p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  
+  .journalCard p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  /* Sentiment Badges */
+  .sentimentBadge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    animation: sentimentPulse 2s ease-in-out infinite;
+    transition: var(--transition-normal);
+  }
+  
+  @keyframes sentimentPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  
+  .sentimentPositive {
+    background: linear-gradient(135deg, var(--success-color), var(--success-light));
+    color: white;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  
+  .sentimentPositive:hover {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    animation: sentimentRipple 0.6s ease-out;
+  }
+  
+  .sentimentNegative {
+    background: linear-gradient(135deg, var(--error-color), var(--error-light));
+    color: white;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  
+  .sentimentNegative:hover {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    animation: sentimentRipple 0.6s ease-out;
+  }
+  
+  .sentimentNeutral {
+    background: linear-gradient(135deg, var(--neutral-color), var(--neutral-light));
+    color: white;
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  
+  .sentimentNeutral:hover {
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+    animation: sentimentRipple 0.6s ease-out;
+  }
+  
+  @keyframes sentimentRipple {
+    to {
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+    }
+  }
+  
+  /* Card Actions */
+  .cardActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(203, 213, 225, 0.3);
+    flex-wrap: wrap;
+  }
+  
+  /* Button Base Styles */
+  .viewButton,
+  .editButton,
+  .deleteButton {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .viewButton::before,
+  .editButton::before,
+  .deleteButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition-fast);
+  }
+  
+  .viewButton:hover::before,
+  .editButton:hover::before,
+  .deleteButton:hover::before {
+    left: 100%;
+  }
+  
+  .viewButton {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .viewButton:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  }
+  
+  .editButton {
+    background: linear-gradient(135deg, var(--warning-color), var(--warning-light));
+    color: white;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .editButton:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--warning-light), var(--warning-color));
+  }
+  
+  .deleteButton {
+    background: linear-gradient(135deg, var(--error-color), var(--error-light));
+    color: white;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .deleteButton:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--error-light), var(--error-color));
+  }
+  
+  .viewButton:active,
+  .editButton:active,
+  .deleteButton:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Error and Loading States */
+  .error {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    color: var(--error-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    animation: errorShake 0.5s ease-in-out;
+  }
+  
+  @keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  .loading {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    padding: 2rem;
+    animation: loadingPulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes loadingPulse {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem 0.75rem;
+    }
+    
+    .header {
+      font-size: 2rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .entryList {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .journalCard {
+      padding: 1.25rem;
+    }
+    
+    .cardActions {
+      flex-direction: column;
+    }
+    
+    .viewButton,
+    .editButton,
+    .deleteButton {
+      flex: none;
+      min-width: 100%;
+    }
+    
+    .cardHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .cardTime {
+      align-self: flex-end;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0.75rem 0.5rem;
+    }
+    
+    .header {
+      font-size: 1.75rem;
+    }
+    
+    .newEntryButton {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .journalCard {
+      padding: 1rem;
+    }
+  }
+  
+  /* Accessibility Enhancements */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Focus States for Accessibility */
+  .newEntryButton:focus,
+  .viewButton:focus,
+  .editButton:focus,
+  .deleteButton:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  
+  .journalCard:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }

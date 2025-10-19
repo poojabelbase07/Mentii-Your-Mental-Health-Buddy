@@ -1,0 +1,661 @@
+/* CBTJournalEntryDetail.module.css */
+
+/* CSS Variables for Light/Dark Theme */
+:root {
+    --bg-primary: linear-gradient(135deg, #f0f4ff 0%, #e8f2ff 100%);
+    --bg-secondary: rgba(255, 255, 255, 0.8);
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border: rgba(226, 232, 240, 0.8);
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -2px rgba(0, 0, 0, 0.1);
+    --accent-primary: #667eea;
+    --accent-secondary: #764ba2;
+    --success: #48bb78;
+    --warning: #ed8936;
+    --danger: #f56565;
+    --positive: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --negative: linear-gradient(135deg, #fc8181 0%, #f093fb 100%);
+    --neutral: linear-gradient(135deg, #90cdf4 0%, #a78bfa 100%);
+    --calming-mint: #a7f3d0;
+    --soft-lavender: #c7d2fe;
+    --gentle-blue: #bfdbfe;
+  }
+  
+  /* Dark theme variables */
+  [data-theme="dark"] {
+    --bg-primary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    --bg-secondary: rgba(45, 55, 72, 0.8);
+    --bg-card: rgba(45, 55, 72, 0.95);
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #a0aec0;
+    --border: rgba(74, 85, 104, 0.8);
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Main Container */
+  .container {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* Header */
+  .header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--positive);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+    text-align: center;
+    animation: slideInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .description {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    animation: slideInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+  }
+  
+  /* Detail Card */
+  .detailCard {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    animation: scaleIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  }
+  
+  .detailCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--positive);
+    animation: expandWidth 1s ease-out 0.8s both;
+  }
+  
+  /* Section Styling */
+  .detailCard h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    padding-left: 1rem;
+    animation: slideInLeft 0.6s ease-out both;
+  }
+  
+  .detailCard h4:nth-of-type(1) { animation-delay: 0.3s; }
+  .detailCard h4:nth-of-type(2) { animation-delay: 0.4s; }
+  .detailCard h4:nth-of-type(3) { animation-delay: 0.5s; }
+  .detailCard h4:nth-of-type(4) { animation-delay: 0.6s; }
+  .detailCard h4:nth-of-type(5) { animation-delay: 0.7s; }
+  .detailCard h4:nth-of-type(6) { animation-delay: 0.8s; }
+  .detailCard h4:nth-of-type(7) { animation-delay: 0.9s; }
+  .detailCard h4:nth-of-type(8) { animation-delay: 1s; }
+  
+  .detailCard h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: var(--positive);
+    border-radius: 2px;
+    animation: expandHeight 0.5s ease-out 0.3s both;
+  }
+  
+  .detailCard h4:first-of-type {
+    margin-top: 0;
+  }
+  
+  /* Content Text */
+  .detailContent {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    padding: 1.25rem;
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease-out both;
+  }
+  
+  .detailContent:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    background: var(--bg-secondary);
+  }
+  
+  .detailSubContent {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-primary);
+    animation: slideInRight 0.6s ease-out both;
+  }
+  
+  /* Emotion List */
+  .emotionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    animation: fadeInUp 0.6s ease-out both;
+  }
+  
+  .emotionList li {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    animation: bounceIn 0.6s ease-out both;
+  }
+  
+  .emotionList li:nth-child(1) { animation-delay: 0.1s; }
+  .emotionList li:nth-child(2) { animation-delay: 0.2s; }
+  .emotionList li:nth-child(3) { animation-delay: 0.3s; }
+  .emotionList li:nth-child(4) { animation-delay: 0.4s; }
+  
+  .emotionList li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--intensity, 0%);
+    height: 100%;
+    background: linear-gradient(90deg, var(--calming-mint) 0%, var(--accent-primary) 100%);
+    opacity: 0.2;
+    transition: width 0.8s ease-out;
+    animation: fillIntensity 1.2s ease-out 0.5s both;
+  }
+  
+  .emotionList li:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-primary);
+  }
+  
+  /* Sentiment Badge */
+  .sentimentBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite, slideInUp 0.6s ease-out both;
+  }
+  
+  .sentimentBadge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+  
+  .sentimentPositive {
+    background: var(--positive);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  }
+  
+  .sentimentNegative {
+    background: var(--negative);
+    box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
+  }
+  
+  .sentimentNeutral {
+    background: var(--neutral);
+    box-shadow: 0 4px 15px rgba(144, 205, 244, 0.4);
+  }
+  
+  /* Action Buttons */
+  .detailActions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+    animation: slideInUp 0.8s ease-out 1.2s both;
+  }
+  
+  .editButton,
+  .deleteButton,
+  .backButton {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    min-width: 140px;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+  
+  .editButton::before,
+  .deleteButton::before,
+  .backButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+  }
+  
+  .editButton:hover::before,
+  .deleteButton:hover::before,
+  .backButton:hover::before {
+    left: 100%;
+  }
+  
+  .editButton {
+    background: var(--positive);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .editButton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    filter: brightness(1.1);
+  }
+  
+  .editButton:active {
+    transform: translateY(-1px);
+  }
+  
+  .deleteButton {
+    background: var(--negative);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .deleteButton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    filter: brightness(1.1);
+  }
+  
+  .deleteButton:active {
+    transform: translateY(-1px);
+  }
+  
+  .backButton {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+  }
+  
+  .backButton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background: var(--bg-card);
+    border-color: var(--accent-primary);
+  }
+  
+  .backButton:active {
+    transform: translateY(-1px);
+  }
+  
+  /* Error and Loading States */
+  .error {
+    color: var(--danger);
+    text-align: center;
+    padding: 2rem;
+    background: rgba(245, 101, 101, 0.1);
+    border: 2px solid rgba(245, 101, 101, 0.3);
+    border-radius: 16px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 600px;
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+  }
+  
+  .loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border);
+    border-top: 4px solid var(--accent-primary);
+    border-radius: 50%;
+    margin-left: 1rem;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Cognitive Distortions Tags */
+  .detailCard p:has(+ .detailContent) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  
+  /* Custom styling for cognitive distortions when they appear as comma-separated text */
+  .detailContent:has-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .header {
+      font-size: 2rem;
+    }
+    
+    .detailCard {
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+    
+    .detailActions {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .editButton,
+    .deleteButton,
+    .backButton {
+      width: 100%;
+      min-width: auto;
+    }
+    
+    .emotionList {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .emotionList li {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .detailCard {
+      padding: 1rem;
+      margin: 0 0.5rem;
+    }
+    
+    .detailCard h4 {
+      font-size: 1.1rem;
+      padding-left: 0.75rem;
+    }
+    
+    .detailContent {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes expandWidth {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes expandHeight {
+    from {
+      height: 0;
+    }
+    to {
+      height: 60%;
+    }
+  }
+  
+  @keyframes fillIntensity {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--intensity, 0%);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% { 
+      transform: rotate(0deg); 
+    }
+    100% { 
+      transform: rotate(360deg); 
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Focus States for Accessibility */
+  .editButton:focus,
+  .deleteButton:focus,
+  .backButton:focus {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+  
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .detailCard {
+      border-width: 2px;
+    }
+    
+    .sentimentBadge {
+      border: 2px solid currentColor;
+    }
+    
+    .emotionList li {
+      border-width: 3px;
+    }
+  }
+  
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }

@@ -1,0 +1,290 @@
+/* Card Container */
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Message Toast */
+.message {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10;
+  animation: slideIn 0.3s ease-out;
+}
+
+.message.success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.message.error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.message.info {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Card Header */
+.cardHeader {
+  padding: 24px 24px 0 24px;
+  text-align: center;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 24px;
+}
+
+/* Game Container */
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Game Stats */
+.gameStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statItem {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Game Area */
+.gameArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.scrambledWord {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #1f2937;
+  margin: 0;
+  text-align: center;
+}
+
+.hint {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+}
+
+/* Game Form */
+.gameForm {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* Buttons */
+.primaryButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: #2563eb;
+}
+
+.primaryButton:active {
+  background-color: #1d4ed8;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.secondaryButton:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: #e5e7eb;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Game Over */
+.gameOver {
+  text-align: center;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.gameOverTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.finalScore {
+  font-size: 18px;
+  color: #374151;
+  margin: 0;
+}
+
+.scoreHighlight {
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+/* Back Section */
+.backSection {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.backButton {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #4b5563;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .card {
+    margin: 16px;
+    border-radius: 8px;
+  }
+  
+  .cardHeader,
+  .cardContent {
+    padding: 16px;
+  }
+  
+  .scrambledWord {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .inputGroup {
+    flex-direction: column;
+  }
+  
+  .gameStats {
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

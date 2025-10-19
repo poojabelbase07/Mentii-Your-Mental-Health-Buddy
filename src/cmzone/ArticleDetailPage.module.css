@@ -1,0 +1,122 @@
+/* src/styles/ArticleDetailPage.module.css */
+.articleDetailContainer {
+  max-width: 900px;
+  margin: 100px auto 40px; /* Adjust margin-top to clear the sticky header */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0f2f7;
+  font-family: 'Nunito', sans-serif; /* Consistent font */
+  color: #333;
+}
+
+.loading, .notFoundContainer {
+  text-align: center;
+  margin-top: 150px; /* Ample space from top */
+  padding: 30px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.notFoundTitle {
+  color: #d9534f;
+  margin-bottom: 15px;
+}
+
+.notFoundMessage {
+  margin-bottom: 25px;
+}
+
+.backButton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  background-color: #7bbcd0; /* Calming blue */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.95em;
+}
+
+.backButton:hover {
+  background-color: #67aabe;
+  transform: translateY(-2px);
+}
+
+.articleTitle {
+  font-size: 2.5em;
+  color: #2c5364; /* Darker calming blue */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.articleCategory {
+  font-size: 0.95em;
+  color: #4a7d96;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.articleContent {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.articleContent h3 {
+  font-size: 1.6em;
+  color: #4a7d96;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0f2f7;
+  padding-bottom: 5px;
+}
+
+.articleContent p {
+  margin-bottom: 1em;
+}
+
+.relatedArticles {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px dashed #e0f2f7;
+}
+
+.relatedArticles h2 {
+  font-size: 1.8em;
+  color: #2c5364;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.relatedArticles ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.relatedArticles li {
+  background-color: #eaf6f9;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: background-color 0.2s ease;
+}
+
+.relatedArticles li:hover {
+  background-color: #d1eaf2;
+}
+
+.relatedArticles li a {
+  text-decoration: none;
+  color: #4a7d96;
+  font-weight: 600;
+  font-size: 1em;
+}

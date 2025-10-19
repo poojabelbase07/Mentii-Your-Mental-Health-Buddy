@@ -1,0 +1,319 @@
+/* src/components/modules/CBTJournalEntryForm.module.css */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for consistent styling */
+:root {
+    --color-sky-blue: #C1E1F0; /* Light Sky Blue */
+    --color-lavender: #E6E6FA; /* Lavender */
+    --color-blush-pink: #FADADD; /* Blush Pink */
+    --color-mint-green: #D4EDDA; /* Mint Green */
+    --color-white: #FFFFFF;
+    --color-dark-text: #333333;
+    --color-light-text: #666666;
+    --color-error: #EF4444; /* Red */
+    --color-success: #22C55E; /* Green */
+    --color-border: rgba(255, 255, 255, 0.3);
+    --color-glass-bg: rgba(255, 255, 255, 0.2);
+    --color-glass-bg-hover: rgba(255, 255, 255, 0.3);
+
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --border-radius-small: 8px;
+    --border-radius-medium: 15px;
+    --border-radius-large: 25px;
+}
+
+/* Base styles for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-sky-blue) 0%, var(--color-lavender) 100%);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark-text);
+    box-sizing: border-box;
+}
+
+/* Header styling */
+.header {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-dark-text);
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(45deg, #6A82FB, #FC5C7D); /* Calming gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--shadow-light);
+}
+
+.description {
+    font-size: 1.1em;
+    color: var(--color-light-text);
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* Main Journal Form styling - Glassmorphism effect */
+.journalForm {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-large);
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for form elements */
+}
+
+/* Form Group for spacing */
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-dark-text);
+    margin-bottom: 8px;
+}
+
+/* Input and Textarea styling */
+.input,
+.textarea,
+.intensityInput {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    background: var(--color-glass-bg);
+    color: var(--color-dark-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--color-light-text);
+    opacity: 0.7;
+}
+
+.input:focus,
+.textarea:focus,
+.intensityInput:focus {
+    outline: none;
+    border-color: rgba(120, 180, 255, 0.7); /* Slightly brighter blue on focus */
+    box-shadow: 0 0 0 3px rgba(120, 180, 255, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft glow */
+    background: var(--color-glass-bg-hover);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Emotion Input Group */
+.emotionInputGroup {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.emotionInputGroup .input {
+    flex-grow: 1;
+    min-width: 150px; /* Ensure input is not too small */
+}
+
+.intensityInput {
+    width: 80px;
+    text-align: center;
+}
+
+.addEmotionBtn {
+    background: linear-gradient(45deg, var(--color-mint-green), #98D8AA);
+    color: var(--color-dark-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.addEmotionBtn:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 15px var(--color-mint-green); /* Glow effect */
+    transform: translateY(-2px);
+}
+
+/* Emotion Tags */
+.emotionTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.emotionTag {
+    background: var(--color-blush-pink);
+    color: var(--color-dark-text);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-large); /* Pill shape */
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.2s ease;
+}
+
+.emotionTag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.removeEmotionBtn {
+    background: none;
+    border: none;
+    color: var(--color-dark-text);
+    font-size: 1.2em;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    margin-left: 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.removeEmotionBtn:hover {
+    opacity: 1;
+    color: var(--color-error);
+}
+
+/* Buttons */
+.submitButton,
+.backButton {
+    padding: 15px 25px;
+    border: none;
+    border-radius: var(--border-radius-medium);
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+    margin-top: 10px;
+}
+
+.submitButton {
+    background: linear-gradient(45deg, #6A82FB, #8A9BFF); /* Sky blue gradient */
+    color: var(--color-white);
+}
+
+.submitButton:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px #6A82FB; /* Stronger glow */
+}
+
+.submitButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+.backButton {
+    background: linear-gradient(45deg, var(--color-lavender), #D0D0F5); /* Lavender gradient */
+    color: var(--color-dark-text);
+    margin-left: 15px;
+}
+
+.backButton:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px var(--color-lavender);
+}
+
+/* Error message styling */
+.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    border-radius: var(--border-radius-small);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Hint text below inputs */
+.hint {
+    font-size: 0.85em;
+    color: var(--color-light-text);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .journalForm {
+        padding: 25px;
+        border-radius: var(--border-radius-medium);
+    }
+
+    .header {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .submitButton,
+    .backButton {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .emotionInputGroup {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .emotionInputGroup .input,
+    .intensityInput,
+    .addEmotionBtn {
+        width: 100%;
+    }
+
+    .intensityInput {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .journalForm {
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 1.8em;
+    }
+}
+
+
+

@@ -1,0 +1,91 @@
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #181818;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+    border-top: 1px solid #333;
+  }
+  
+  .song-infoo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .album-art {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .song-details h4 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .song-details p {
+    font-size: 12px;
+    margin: 2px 0 0;
+    color: #bbb;
+  }
+  
+  .controls {
+    flex: 1;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      /* centers icons vertically if needed */
+    gap: 18px;
+    flex-shrink: 0;            /* prevents shrinking to the left */
+  margin: 10px auto;  
+  }
+  
+  
+  .controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .controls button:hover {
+    transform: scale(1.2);
+  }
+  
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    cursor: pointer;
+    margin-top: -8px; /* pull it up */
+  }
+  
+  .progress {
+    height: 100%;
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    width: 0;
+    transition: width 0.1s linear;
+  }
+  

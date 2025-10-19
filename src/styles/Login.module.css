@@ -1,0 +1,433 @@
+/* Login.module.css - Enhanced for attractiveness and motion */
+
+:root {
+  /* Define a new color palette */
+  --primary-color: #6a11cb; /* Deep Purple */
+  --secondary-color: #2575fc; /* Bright Blue */
+  --accent-color: #ff6b6b; /* Vibrant Coral */
+  --background-light: #f5f7fa; /* Light Grey Blue */
+  --card-background: #ffffff;
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+  --border-color: #e0e0e0;
+  --error-color: #e74c3c;
+}
+
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background-light), #e0e6ed); /* Soft gradient background */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure no overflow from animated elements */
+}
+
+.authCard {
+  background-color: var(--card-background);
+  border-radius: 25px; /* Slightly more rounded */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  padding: 45px;
+  width: 100%;
+  max-width: 480px; /* Slightly wider card */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2; /* Ensure card is above background animations */
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeInSlideUp 0.8s ease-out forwards; /* Initial card animation */
+}
+
+/* Animated background shapes - using pseudo-elements */
+.authCard::before,
+.authCard::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(80px); /* Soft blur effect */
+  animation: floatAndPulse 15s infinite ease-in-out alternate; /* Floating and pulsing motion */
+  z-index: 0;
+}
+
+.authCard::before {
+  background: var(--primary-color);
+  width: 250px;
+  height: 250px;
+  top: -80px;
+  left: -80px;
+}
+
+.authCard::after {
+  background: var(--secondary-color);
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 2s; /* Stagger animation */
+}
+
+/* Keyframe Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAndPulse {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(20px, 20px) scale(1.05);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.1;
+  }
+}
+
+.authHeader {
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+.authHeader h1 {
+  font-size: 2.5em;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.authHeader p {
+  font-size: 1.1em;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.googleSignInSection {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.authButton {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradient button */
+  color: #ffffff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 12px; /* More rounded */
+  font-size: 1.15em;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.authButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  transform: skewX(-20deg);
+}
+
+.authButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.authButton:hover::after {
+  left: 100%; /* Swipe effect */
+}
+
+.authButton:disabled {
+  background: linear-gradient(45deg, #b0c4de, #c0d8f0);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.authButton:disabled::after {
+  content: none; /* Disable hover effect when disabled */
+}
+
+/* Social icons - improved styling */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.socialIcon {
+  width: 45px; /* Larger icons */
+  height: 45px;
+  border-radius: 50%;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: #e0eaf2;
+}
+
+/* Replace img with actual icon components (e.g., from react-icons) */
+/* Example:
+.socialIcon.google svg { color: #db4437; }
+.socialIcon.facebook svg { color: #4267b2; }
+.socialIcon.apple svg { color: #000000; }
+*/
+.socialIcon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+  color: var(--text-light);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+  transform: scaleY(0.5); /* Make lines thinner */
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.8em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.8em;
+}
+
+.authMethodSelector {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.methodTabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f0f4f8; /* Lighter background for tabs */
+  border-radius: 15px; /* More rounded tabs container */
+  padding: 6px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.methodTab {
+  background-color: transparent;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-medium);
+  transition: all 0.3s ease;
+  flex: 1; /* Distribute space evenly */
+}
+
+.methodTab.active {
+  background: var(--card-background); /* White background for active tab */
+  color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.methodTab:not(.active):hover {
+  color: var(--primary-color);
+  background-color: #e8f0f6; /* Subtle hover for inactive tabs */
+}
+
+.authForm {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.formGroup {
+  margin-bottom: 22px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.95em;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.formGroup input {
+  width: calc(100% - 28px); /* Account for padding */
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px; /* More rounded inputs */
+  font-size: 1em;
+  color: var(--text-dark);
+  background-color: #fcfcfc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.15); /* Primary color glow */
+  background-color: #ffffff;
+  outline: none;
+}
+
+.formGroup input.error {
+  border-color: var(--error-color);
+  background-color: #fffafa;
+}
+
+.errorMessage {
+  color: var(--error-color);
+  font-size: 0.88em;
+  margin-top: 7px;
+  display: block;
+  font-weight: 500;
+}
+
+.formHelp {
+  font-size: 0.85em;
+  color: var(--text-light);
+  margin-top: 8px;
+  display: block;
+}
+
+.forgotPasswordContainer {
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 25px;
+}
+
+.forgotPasswordLink {
+  color: var(--primary-color);
+  font-size: 0.95em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.forgotPasswordLink:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.authButtonSecondary {
+  background-color: #e9eef5; /* Lighter, subtle background */
+  color: var(--text-medium);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.authButtonSecondary:hover {
+  background-color: #d8e2ee;
+  color: var(--text-dark);
+  transform: translateY(-1px);
+}
+
+.anonymousInfo {
+  margin-bottom: 25px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8faff; /* Very light blue */
+  border: 1px solid #eef2f8;
+  border-radius: 15px;
+  color: var(--text-medium);
+  font-size: 0.98em;
+  line-height: 1.5;
+}
+
+.anonymousInfo p {
+  margin-bottom: 8px;
+}
+
+.authFooter {
+  margin-top: 35px;
+  font-size: 1em;
+  color: var(--text-medium);
+  position: relative;
+  z-index: 1;
+}
+
+.authLink {
+  color: var(--accent-color); /* Use accent color for link */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.authLink:hover {
+  color: #ff4a4a; /* Darker accent on hover */
+  text-decoration: underline;
+}
+
+/* If you're using the 3D person image, it would be positioned similarly to the previous explanation,
+   perhaps with a subtle floating animation if it's not too distracting.
+*/
+/* Example for the decorative image (place in App.js or parent component) */
+/*
+@keyframes floatAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.decorativeImage {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  height: 70vh;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+  animation: floatAnimation 3s infinite ease-in-out; // Apply float animation
+}
+*/

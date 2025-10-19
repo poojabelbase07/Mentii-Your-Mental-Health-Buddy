@@ -1,0 +1,326 @@
+/* Signup.module.css - Enhanced for attractiveness and motion (consistent with Login) */
+
+:root {
+  /* Define a consistent color palette */
+  --primary-color: #6a11cb; /* Deep Purple */
+  --secondary-color: #2575fc; /* Bright Blue */
+  --accent-color: #ff6b6b; /* Vibrant Coral */
+  --background-light: #f5f7fa; /* Light Grey Blue */
+  --card-background: #ffffff;
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+  --border-color: #e0e0e0;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71; /* Added for password strength */
+  --warning-color: #f39c12; /* Added for password strength */
+}
+
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background-light), #e0e6ed); /* Soft gradient background */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure no overflow from animated elements */
+}
+
+.authCard {
+  background-color: var(--card-background);
+  border-radius: 25px; /* Slightly more rounded */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  padding: 45px;
+  width: 100%;
+  max-width: 480px; /* Consistent card width */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2; /* Ensure card is above background animations */
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeInSlideUp 0.8s ease-out forwards; /* Initial card animation */
+}
+
+/* Animated background shapes - using pseudo-elements */
+.authCard::before,
+.authCard::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(80px); /* Soft blur effect */
+  animation: floatAndPulse 15s infinite ease-in-out alternate; /* Floating and pulsing motion */
+  z-index: 0;
+}
+
+.authCard::before {
+  background: var(--primary-color);
+  width: 250px;
+  height: 250px;
+  top: -80px;
+  left: -80px;
+}
+
+.authCard::after {
+  background: var(--secondary-color);
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 2s; /* Stagger animation */
+}
+
+/* Keyframe Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAndPulse {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(20px, 20px) scale(1.05);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.1;
+  }
+}
+
+.authHeader {
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+.authHeader h1 {
+  font-size: 2.5em;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.authHeader p {
+  font-size: 1.1em;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.googleSignInSection {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.authButton {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradient button */
+  color: #ffffff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 12px; /* More rounded */
+  font-size: 1.15em;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.authButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  transform: skewX(-20deg);
+}
+
+.authButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.authButton:hover::after {
+  left: 100%; /* Swipe effect */
+}
+
+.authButton:disabled {
+  background: linear-gradient(45deg, #b0c4de, #c0d8f0);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.authButton:disabled::after {
+  content: none; /* Disable hover effect when disabled */
+}
+
+/* Specific style for Google button if needed, but primary authButton covers it well */
+.authButton.google {
+  /* You can add specific styles here if you want to differentiate Google button visually */
+  /* For example, if you want a different gradient or icon specific styling */
+}
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+  color: var(--text-light);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+  transform: scaleY(0.5); /* Make lines thinner */
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.8em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.8em;
+}
+
+.authForm {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.formGroup {
+  margin-bottom: 22px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.95em;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.formGroup input {
+  width: calc(100% - 28px); /* Account for padding */
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px; /* More rounded inputs */
+  font-size: 1em;
+  color: var(--text-dark);
+  background-color: #fcfcfc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.15); /* Primary color glow */
+  background-color: #ffffff;
+  outline: none;
+}
+
+.formGroup input.error {
+  border-color: var(--error-color);
+  background-color: #fffafa;
+}
+
+.errorMessage {
+  color: var(--error-color);
+  font-size: 0.88em;
+  margin-top: 7px;
+  display: block;
+  font-weight: 500;
+}
+
+.submitError {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fbecec; /* Light red background for errors */
+  border: 1px solid var(--error-color);
+  text-align: center;
+  font-size: 0.95em;
+}
+
+
+.formHelp {
+  font-size: 0.85em;
+  color: var(--text-light);
+  margin-top: 8px;
+  display: block;
+}
+
+/* Password strength indicator styles */
+.passwordStrength {
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block; /* To make it fit its content */
+  min-width: 90px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.passwordStrength.weak {
+  background-color: #ffebeb;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.passwordStrength.medium {
+  background-color: #fff8e1;
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+.passwordStrength.strong {
+  background-color: #e6f7ed;
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+
+.authFooter {
+  margin-top: 35px;
+  font-size: 1em;
+  color: var(--text-medium);
+  position: relative;
+  z-index: 1;
+}
+
+.authLink {
+  color: var(--accent-color); /* Use accent color for link */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.authLink:hover {
+  color: #ff4a4a; /* Darker accent on hover */
+  text-decoration: underline;
+}

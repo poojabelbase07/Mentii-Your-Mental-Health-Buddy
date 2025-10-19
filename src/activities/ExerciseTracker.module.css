@@ -1,0 +1,240 @@
+/* ExerciseTracker.module.css */
+
+.exerciseTrackerCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.title {
+  text-align: center;
+  color: #6a0dad; /* Primary purple */
+  margin-bottom: 25px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Spacing between input groups */
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee; /* Separator for form and table */
+  padding-bottom: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.inputField,
+.selectField {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded borders */
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputField:focus,
+.selectField:focus {
+  outline: none;
+  border-color: #8a2be2; /* Darker purple on focus */
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+.radioGroup {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #555;
+  cursor: pointer;
+}
+
+.radioLabel input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #8a2be2; /* Accent color for radio button */
+  transform: scale(1.1); /* Slightly larger radio buttons */
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default look */
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8a2be2; /* Purple thumb */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8a2be2;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.submitButton {
+  background-color: #8a2be2; /* Primary purple */
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.submitButton:hover {
+  background-color: #6a0dad; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: #b0a4cf;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.errorMessage {
+  color: #dc3545; /* Red for errors */
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.successMessage {
+  color: #28a745; /* Green for success */
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.pastEntriesTitle {
+  text-align: center;
+  color: #6a0dad;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.noEntriesMessage {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.tableContainer {
+  overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+.exerciseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.exerciseTable th,
+.exerciseTable td {
+  border: 1px solid #eee;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.exerciseTable th {
+  background-color: #f8f8f8;
+  color: #6a0dad; /* Purple header text */
+  font-weight: 600;
+}
+
+.exerciseTable tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.exerciseTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .exerciseTrackerCard {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    gap: 15px;
+  }
+
+  .radioGroup {
+    flex-direction: column; /* Stack radio buttons vertically */
+    gap: 10px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+
+  .pastEntriesTitle {
+    font-size: 1.5em;
+    margin-top: 25px;
+  }
+
+  .exerciseTable th,
+  .exerciseTable td {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+}

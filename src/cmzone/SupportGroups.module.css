@@ -1,0 +1,121 @@
+/* components/SupportGroups.module.css */
+.filterContainer {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filterSelect {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #cce7ef;
+  font-size: 1em;
+  color: #4a7d96;
+  background-color: #eaf6f9;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #7bbcd0;
+  box-shadow: 0 0 0 3px rgba(123, 188, 208, 0.3);
+}
+
+.groupsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.groupCard {
+  background-color: #f7fcfd;
+  border: 1px solid #e0f2f7;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.groupCard h3 {
+  color: #2c5364;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.groupCard p {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to take up available space */
+}
+
+.topicTags {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #e0f2f7;
+  color: #4a7d96;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.joinButton, .contactButton {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.joinButton {
+  background-color: #7bbcd0; /* Soothing blue */
+  color: #fff;
+}
+
+.joinButton:hover {
+  background-color: #67aabe;
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  background-color: #e0f2f7;
+  color: #4a7d96;
+  border: 1px solid #7bbcd0;
+}
+
+.contactButton:hover {
+  background-color: #d1eaf2;
+  transform: translateY(-2px);
+}
+
+.noResults {
+  grid-column: 1 / -1; /* Span across all columns */
+  text-align: center;
+  color: #888;
+  padding: 30px;
+  font-style: italic;
+}

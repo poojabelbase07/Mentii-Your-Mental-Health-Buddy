@@ -1,0 +1,197 @@
+/* SleepTracker.module.css */
+
+.sleepTrackerCard {
+  background-color: #f0f8ff; /* Light pastel blue */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 650px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.title {
+  text-align: center;
+  color: #6a0dad; /* Purple accent */
+  margin-bottom: 25px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Spacing between input groups */
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.timeInput,
+.selectField,
+.textareaField {
+  padding: 12px 15px;
+  border: 1px solid #c0d9e7; /* Soft blue border */
+  border-radius: 8px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.timeInput:focus,
+.selectField:focus,
+.textareaField:focus {
+  outline: none;
+  border-color: #8a2be2; /* Darker purple on focus */
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
+/* Specific styling for time inputs to ensure neat alignment */
+.timeInput {
+  -webkit-appearance: none; /* Remove default browser styling for time input */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.submitButton {
+  background-color: #8a2be2; /* Purple accent */
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.submitButton:hover {
+  background-color: #6a0dad; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: #b0a4cf;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.errorMessage {
+  color: #dc3545; /* Red for errors */
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.successMessage {
+  color: #28a745; /* Green for success */
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.chartTitle {
+  text-align: center;
+  color: #6a0dad;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+  border-top: 1px solid #e0f0ff; /* Lighter border for pastel theme */
+  padding-top: 25px;
+}
+
+.loadingMessage,
+.noDataMessage {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.canvasContainer {
+  width: 100%;
+  height: 250px; /* Fixed height for the chart */
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.sleepChart {
+  display: block; /* Remove extra space below canvas */
+  width: 100%;
+  height: 100%;
+}
+
+.pastLogsList {
+  margin-top: 20px;
+}
+
+.pastLogsHeader {
+  color: #6a0dad;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.pastLogsList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pastLogItem {
+  background-color: #e6f7ff; /* Even lighter blue for list items */
+  border-left: 5px solid #8a2be2; /* Purple accent on left */
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sleepTrackerCard {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+
+  .chartTitle {
+    font-size: 1.5em;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .canvasContainer {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}

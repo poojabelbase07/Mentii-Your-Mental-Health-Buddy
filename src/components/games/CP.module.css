@@ -1,0 +1,405 @@
+/* ColorPsychology.module.css */
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 32px 24px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.content {
+  padding: 24px;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tabsTrigger {
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #64748b;
+}
+
+.tabsTrigger.active {
+  background: white;
+  color: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabsTrigger.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tabsTrigger:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.tabsContent {
+  margin-top: 24px;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .colorGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .colorGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.colorOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.colorOption:hover {
+  transform: scale(1.05);
+}
+
+.colorSquare {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.colorOption:hover .colorSquare {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.colorName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  color: #374151;
+}
+
+.instruction {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.results {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .resultHeader {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.selectedColor {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .selectedColor {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.colorInfo {
+  flex: 1;
+}
+
+.colorTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #1f2937;
+}
+
+.colorDescription {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+  color: #374151;
+}
+
+.psychologyText {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.moodCard {
+  padding: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.moodHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.moodEmoji {
+  font-size: 1.5rem;
+}
+
+.moodName {
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #374151;
+}
+
+.moodDescription {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.activitiesSection {
+  margin-top: 32px;
+}
+
+.activitiesTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  color: #1f2937;
+}
+
+.activitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .activitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.activityCard {
+  padding: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activityCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activityText {
+  margin: 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+.exploreMore {
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 12px;
+}
+
+.exploreTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #92400e;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.actionButton {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+.resetSection {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.resetButton {
+  padding: 12px 24px;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.resetButton:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.infoSection {
+  margin-top: 32px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  color: #1f2937;
+}
+
+.infoParagraph {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.infoParagraph:last-child {
+  margin-bottom: 0;
+}

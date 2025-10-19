@@ -1,0 +1,140 @@
+/* components/Therapists.module.css */
+.therapistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.therapistCard {
+  background-color: #f7fcfd;
+  border: 1px solid #e0f2f7;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.profilePicture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #7bbcd0;
+  flex-shrink: 0;
+}
+
+.profileInfo {
+  flex-grow: 1;
+}
+
+.therapistCard h3 {
+  color: #2c5364;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.specialty {
+  color: #4a7d96;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.bookmarkButton {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+.bookmarkButton:hover {
+  color: #ff9a9a;
+}
+
+.bookmarkButton.bookmarked {
+  color: #ff6b6b;
+}
+
+.details p {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.details p svg {
+  color: #7bbcd0;
+}
+
+.expertiseTags {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertiseTag {
+  background-color: #eaf6f9;
+  color: #4a7d96;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+}
+
+.contactActions {
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
+}
+
+.bookButton, .contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.bookButton {
+  background-color: #7bbcd0;
+  color: #fff;
+}
+
+.bookButton:hover {
+  background-color: #67aabe;
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  background-color: #e0f2f7;
+  color: #4a7d96;
+  border: 1px solid #7bbcd0;
+}
+
+.contactButton:hover {
+  background-color: #d1eaf2;
+  transform: translateY(-2px);
+}
